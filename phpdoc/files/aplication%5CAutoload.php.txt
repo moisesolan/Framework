@@ -1,0 +1,18 @@
+<?php
+/**
+ * @author Moises Olan Gonzalez <itic722014@gmail.com>
+ * @version 1.0 Mi primera versión
+ * @package Mi Framework
+ * 
+ * El autoload sirve para cargar todas las librerias que se encuentra en la carpeta libs
+ * 
+ * @param el string tiene el nombre de la libreria
+ * @return nos regresa un Void
+ */
+ 
+	function __autoload($name){
+		require_once(ROOT."libs".DS.$name.".php");
+	}
+
+
+?>

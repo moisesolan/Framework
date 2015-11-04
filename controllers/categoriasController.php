@@ -1,10 +1,23 @@
 <?php
+
+	/**
+ * @author Moises Olan Gonzalez <itic722014@gmail.com>
+ * @version 1.0 Mi primera versión
+ * @package Mi Framework
+ * 
+ *
+ */
+
 	class categoriasController extends Appcontroller{
 
 		public function __construct(){
 		parent::__construct();
 	}
 
+/**
+	 * index muestra un listado de categorias existentes
+	 * @return void
+*/
 
 
 	public function index() {
@@ -15,7 +28,11 @@
 		$this->_view->renderizar('index');
 	}
 
-
+		/**
+		 * la funcion edit sirve para la edicion de categorias
+		 * @param  string $id contiene el id de la fila
+		 * @return void
+		 */
 
 		public function edit($id = null){
 
@@ -50,7 +67,11 @@
 	}
 
 
-
+	/**
+		 * la funcion add sirve para agregar nuevas categorias
+		 * @return  void
+		 * 
+	*/
 
 		public function add(){
 		if ($_POST) {
@@ -77,6 +98,11 @@
 
 	}
 
+	/**
+		 * la funcion delete sirve para eliminar alguna categoria existente
+		 * @param  string $id contiene id de la fila
+		 * @return void
+		 */
 
 		public function delete($id){
 		$conditions = "id=".$id;

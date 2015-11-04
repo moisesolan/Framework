@@ -1,4 +1,26 @@
 <?php
+
+/**
+	 * Esta es la clase PDO
+	 * 
+	 * Esta clase sirve para realizar la conexion a nuestra base de datos
+	 * 
+	 * @author Moises Olan Gonzalez <itic722014@gmail.com>
+	 * @version 1.0 Mi primera versión
+	 * @package Mi Framework
+	 * Clase PDO para la conexion a la base de datos
+	 * @var  $conection guarda la conexion a nuestra BD
+	 * @var  $dsn se encarga de guardar la cadena para conexión
+	 * @var  $drive contiene el controlador de nuestra BD
+	 * @var  $host contiene los datos de nuestro servidor donde esta alojada la BD
+	 * @var  $database contiene el nombre de la BD
+	 * @var  $username contiene nombre de usuario de la BD
+	 * @var  $password contiene el password de la BD
+	 * @var  $result contiene el resutado de la conexión
+	 * @var  $lasInsertId contiene el ultimo registro insertado a nuestra BD
+	 * @var  $number_Rows contiene el nuero de filas afectadas
+*/
+
 	class classPDO
 	{
 		public $connection;
@@ -27,6 +49,12 @@
 			$this->connection();
 		}
 
+		/**
+		 *  
+		 * connection aqui realizamos la conexión a nuestra BD
+		 * @return void
+		 * 
+		 */
 		public function connection(){
 			$this->dsn = $this->drive.':host='.$this->host.';dbname='.$this->database;
 
@@ -46,8 +74,16 @@
 			}
 		}
 
-		//CREACION DEL METODO FIND
-		public function find($table = null, $query = null, $options = array()){
+/** 
+		 * find funcion para realizar consultas tipo select a la BD
+		 * @param  string $table nombre de la tabla
+		 * @param  string $query almacena los tipos de busqueda
+		 * @param  array $options contiene todas las condiciones de la consulta
+		 * @return string $result resultado de la consulta
+		 * @param  string $fields contiene la cantidad de campos a seleccionar en la consulta
+		 * @param  string $parameters contiene los parametros de la consulta
+		 * 
+*/		public function find($table = null, $query = null, $options = array()){
 			$fields = '*';
 			$parameters = '';
 
@@ -100,7 +136,15 @@
 
 
 
-		//CREACION DEL METODO SAVE
+		/**
+		 *  
+		 * Este es el metodo para insertar datos a la BD
+		 * @param  string $table contiene nombre de la tabla
+		 * @param  array $data contiene los datos a insertar
+		 * @param  string $sql contiene la instruccion de inserción
+		 * @return objeto $result reultado de la consulta 
+		 * 
+		 */
 		
 		public function save($table = null, $data = array()){
 			//obtener el numero de columnas
@@ -112,7 +156,6 @@
 				$fields[$meta['name']] = null;
 			}
 
-			//CONVECION DE NOMBRE, TABLAS EN PLURAL Y CAMPOS EN SINGULAR EN INGLES DE PREFERENCIA CON LA LLAVE PRIMARIA LAMADA ID NULL AUTOINC
 			$fieldsToSave = 'id';
 			$valueToSave = 'NULL';
 
@@ -135,7 +178,16 @@
 
 
 
-		//CREACION DEL METODO UPDATE
+		/**
+		 * la siguiente función update sirve para actualizar los registros en la BD
+		 * 
+		 * @param  string $table contiene nombre de la tabla
+		 * @param  array $data datos que se van a actualizar
+		 * @var    string $sql es la instruccion sql
+		 * @return objeto retorna el resultado de la consulta
+		 */
+		
+		
 	public function update($table = null, $data = array()){
 		$sql = "SELECT * FROM $table";
 			$result = $this->connection->query($sql);
@@ -162,9 +214,14 @@
 
 	}
 
-
-
-	//CREACION DEL METODO DELETE
+	/**
+	 * 
+	 * la siguiente funcion sirve para eliminar registros de nuestra BD
+	 * @param  string $table      Contiene nombre de la tabla
+	 * @param  string $conditions tiene las condiciones de la consulta 
+	 * @return objeto $result     tiene el resultado de la consulta realizada
+	 *
+	 */
 	
 	public function delete($table = null, $conditions){
 		$sql = "DELETE FROM $table WHERE $conditions".";";
@@ -176,7 +233,11 @@
 
 }
 
-
+/**
+ * 
+ * @var db crea una instancia de la clase PDO
+ *
+ */
 
 $db = new classPDO();
 

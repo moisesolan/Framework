@@ -1,4 +1,17 @@
 <?php
+
+/**
+ * clase View
+ * 
+ * clase que contiene los elementos necesarios para cargar las vistas
+ * 
+ * @author  Jorge Rivera <yo.jrivera@gmail.com>
+ * @version  1.0 Primera versión estable
+ * @package  framework
+ * @copyright  2015
+ * 
+ */
+
 class View
 {
 	private $_controlador;
@@ -8,6 +21,14 @@ class View
 		$this->_controlador = $peticion->getControlador();
 		$this->_metodo = $peticion->getMetodo();
 	}
+
+	/**
+	 * 
+	 *la funcion renderizar contiene los elementos de la vista
+	 * @param  string $vista contiene el nombre de la vista
+	 * @return regresa void
+	 * 
+	 */
 
 	public function renderizar($vista){
 

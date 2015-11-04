@@ -53,7 +53,7 @@ class Validations {
 	public function isEmail($email){
 		$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-		//Aplicamos el filtrado
+		//se aplica el filtrado
 		if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 			return true;
 		}

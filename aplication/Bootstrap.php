@@ -1,7 +1,29 @@
 <?php
 
+/**
+ * @author Moises Olan Gonzalez <itic722014@gmail.com>
+ * @version 1.0 Mi primera versión
+ * @package Mi Framework
+ * 
+ * 
+ * */
+
+/**
+ * Esta es la clase Bootstrap
+ */
 class Bootstrap
 {
+
+	/**
+	 * el run nos ejecuta la clase Request
+	 * @param  string $peticion parametro que se recibe de Request
+	 * @var  string controller nos almacena controlador
+	 * @var  string rutaControlador se guarda en la ruta del controlador
+	 * @var  string $metodo manda a llamar a la funcion getMetodo de request
+	 * @var  string $args manda a llamar a la funcion getArgs de request
+	 * */
+
+
 	public static function run(Request $peticion){
 		$controller = $peticion->getControlador().'Controller';
 		$rutaControlador = ROOT.'controllers'. DS . $controller . '.php';

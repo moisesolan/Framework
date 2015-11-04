@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * @author Moises Olan Gonzalez <itic722014@gmail.com>
+ * @version 1.0 Mi primera versión
+ * @package Mi Framework
+ * 
+ */
+
 class usuariosController extends Appcontroller
 {
 	public function __construct(){
@@ -12,6 +20,10 @@ class usuariosController extends Appcontroller
 
 	}
 
+	/**
+	 * funcion add para agregar nuevos usuarios 
+	 * @return  void
+	 */
 
 	public function add(){
 
@@ -33,6 +45,11 @@ class usuariosController extends Appcontroller
 		
 	}
 
+	/**
+	 * la funcion edit para editar usuarios existentes en la bd
+	 * @param  string $id contiene id de la fila
+	 * @return void
+	 */
 
 	public function edit($id = null){
 		if ($_POST){
@@ -53,7 +70,11 @@ class usuariosController extends Appcontroller
 		
 	}
 
-
+	/**
+	 * la funcion delete para eliminar usuarios existentes en nuestra bd
+	 * @param  string $id contiene el id de la fila
+	 * @return void
+	 */
 
 	public function delete($id){
 		$conditions = "id=".$id;
@@ -62,6 +83,12 @@ class usuariosController extends Appcontroller
 		}
 		
 	}
+
+
+	/**
+	 * la funcion login sirve para login de usuario
+	 * @return void
+	 */
 
 	public function login(){
 		if ($_POST) {
@@ -85,6 +112,11 @@ class usuariosController extends Appcontroller
 		$this->_view->renderizar('login');
 	}
 
+
+	/**
+	 * la funcion logout sirve para cerrar sesión
+	 * @return void
+	 */
 
 	public function logout(){
 		$auth = new Authorization();

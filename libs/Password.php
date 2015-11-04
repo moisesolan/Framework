@@ -34,7 +34,7 @@ class Password{
 		return false;	
 	}
 
-	//v 5.5
+
 	public function passwordVerify($pass1, $pass2){
 		if (password_verify($pass1, $pass2)) {
 			return true;

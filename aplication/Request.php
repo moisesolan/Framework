@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * La clase Request
+ * 
+ * La siguiente clase para validar la  url, definir controlador y los metodos a ejecutar
+ * 
+ * @author Moises Olan Gonzalez <itic722014@gmail.com>
+ * @version 1.0 Mi primera versión
+ * @package Mi Framework
+ * 
+ */
+
 class Request{
 	private $_controlador;
 	private $_metodo;
@@ -30,13 +41,31 @@ class Request{
 
 	}
 
+/**
+	 * getControlador se define controlador
+	 * @return objeto _controlador tiene el controlador a solicitar
+	 * 
+*/
+
 	public function getControlador(){
 		return $this->_controlador;
 	}
 
+	/**
+	 * 
+	 * getMetodo se define el metodo
+	 * @return objeto _metodo contiene el metodo a solicitar
+	 * 
+	 */
+
 	public function getMetodo(){
 		return $this->_metodo;
 	}
+
+	/**
+	 * getArgs se define los argumentos
+	 * @return  _argumentos contiene los argumentos a solicitar
+	 */
 
 	public function getArgs(){
 		return $this->_argumentos;

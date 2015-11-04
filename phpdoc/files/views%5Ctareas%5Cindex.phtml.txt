@@ -1,0 +1,35 @@
+<h2>Listado de tareas</h2>
+
+<a href="<?php echo APP_URL."tareas/add/"; ?>">Agregar tarea</a>
+<br>
+
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>NOMBRE</th>
+		<th>FECHA</th>
+		<th>PRIORIDAD</th>
+		<th>CATEGORÍA</th>
+		<th>ESTATUS</th>
+		<th>ACCIONES</th>
+	</tr>
+	<?php foreach ($this->tareas as $tarea): ?> 	
+	<tr>
+		<td><?php echo $tarea[0]; ?></td>
+		<td><?php echo $tarea[2]; ?></td>
+
+
+<div class="tab-content">
+	<td><?php echo $tarea[3]; ?></td>
+		<td><?php echo $tarea[4]; ?></td>
+		<td><?php echo $tarea[7]; ?></td>
+		<td><?php echo $tarea[5]; ?></td>
+		<td>
+			<a href="<?php echo APP_URL."tareas/edit/".$tarea[0];?>">Editar</a>
+			<a href="<?php echo APP_URL."tareas/delete/".$tarea[0];?>">Eliminar</a>
+		</td>
+	</tr>
+	<?php endforeach ?>
+</table>
+
+

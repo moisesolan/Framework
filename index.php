@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * index
+ * 
+ * archivo principal de la aplicación
+ * 
+ * @author Moises Olan Gonzalez <itic722014@gmail.com>
+ * @version 1.0 Mi primera versión
+ * @package Mi Framework
+ * 
+ * 
+ */
 //print_r($_GET['url']);
 
 /*Separador de directorios
