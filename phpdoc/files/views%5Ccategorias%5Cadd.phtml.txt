@@ -1,0 +1,7 @@
+<h2>Agregar categorías</h2>
+
+<form action="<?php echo APP_URL. 'categorias/add' ?>" method="post">
+	<p>Nombre: <input 	type="text" name="nombre"></p>
+	<p><input type="submit"> </p>
+	
+</form>
